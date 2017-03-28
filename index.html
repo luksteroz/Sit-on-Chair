@@ -1,13 +1,10 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Sit o Chair - Warsztaty</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/reset.css">
-
 </head>
 <body>
     <header>
@@ -46,20 +43,24 @@
     </header>
     <section id="slider">
         <div class="container slider clearfix">
-            <div class="slider__arrows floatLeft">
+            <div class="slider__arrows__prev floatLeft">
                 <a href="#">&#60;</a>
             </div>
             <div class="slider__image floatLeft">
-                <img src="images/black_chair.png" alt="Slider image">
+                <ul class="sliderList">
+                    <li><img src="images/black_chair.png" alt="Slider image"></li>
+                    <li><img src="images/orange.png" alt="Slider image"></li>
+                    <li><img src="images/red.png" alt="Slider image"></li>
+                </ul>
             </div>
             <div class="slider__text floatLeft">
                 <h2>SIT <span class="highlighted">ON </span> YOUR <span class="highlighted">CHAIR </span></h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                 </p>
                 <button class="buttonMore"> ZOBACZ WIĘCEJ</button>
             </div>
-            <div class="slider__arrows floatRight">
+            <div class="slider__arrows__next floatRight">
                 <a href="#">&#62;</a>
             </div>
         </div>
@@ -79,6 +80,7 @@
                 </div>
             </div>
             <div class="box cursor">
+                <p></p>
                 <h3> Finds all inputs</h3>
                 <p class="line"></p>
                 <p class="text">
@@ -147,6 +149,79 @@
         </div>
     </div>
     </section>
+    <section class="application ">
+        <div class="main_width container">
+            <section class="choice_part inline">
+                <header>
+                    <h3>SKOMPONUJ SWOJE KRZESŁO</h3>
+                    <span class="green_bell"></span>
+                </header>
+                <div class="form">
+                    <div class="drop_down_list">
+                        <span class="list_label">Wybierz rodzaj</span>
+                        <span class="list_arrow"></span>
+                        <ul class="list_panel display">
+                            <li data-price="80">Clair</li>
+                            <li data-price="90">Margarita</li>
+                            <li data-price="100">Selena</li>
+                        </ul>
+                    </div>
+                    <div class="drop_down_list">
+                        <span class="list_label">Wybierz kolor</span>
+                        <span class="list_arrow"></span>
+                        <ul class="list_panel display">
+                            <li data-price="10">Czerwony</li>
+                            <li data-price="15">Czarny</li>
+                            <li data-price="10">Pomarańczowy</li>
+                        </ul>
+                    </div>
+                    <div class="drop_down_list">
+                        <span class="list_label">Wybierz materiał</span>
+                        <span class="list_arrow"></span>
+                        <ul class="list_panel display">
+                            <li data-price="20">Tkanina</li>
+                            <li data-price="40">Skóra</li>
+                        </ul>
+                    </div>
+                    <div class="checkbox check-box">
+                        <input type="checkbox" id="transport" data-price="200">
+                        <label for="transport">Transport</label>
+                    </div>
+                    <!--<div class="checkbox"></div>-->
+                    <!--<span class="list_label inline_text">Transport</span>-->
+                </div>
+            </section>
+
+            <section class="image_part inline">
+                <img src="images/red_chair.png">
+            </section>
+
+            <section class="summary_part inline">
+                <header class="align_right">
+                    <h3>PODSUMOWANIE</h3>
+                    <span class="green_bell"></span>
+                </header>
+
+                <div class="summary_panel">
+                    <div class="panel_left">
+                        <h4 class="title">Twój fotel</h4>
+                        <span class="color"></span>
+                        <span class="pattern"></span>
+                        <span class="transport"></span>
+                    </div>
+                    <div class="panel_right">
+                        <h4 class="title value"></h4>
+                        <span class="color value"></span>
+                        <span class="pattern value"></span>
+                        <span class="transport value"></span>
+                    </div>
+                    <div class="sum_label">SUMA</div>
+                    <div class="sum"><strong></strong></div>
+                </div>
+                <a href="" class="green_button">Zamawiam</a>
+            </section>
+        </div>
+    </section>
     <section id="contact">
         <div class="container contact">
             <h2>KONTAKT</H2>
@@ -176,7 +251,6 @@
                         </p>
                     </div>
                 </form>
-
     </section>
     <footer>
         <div class="container footer">
@@ -192,5 +266,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>
