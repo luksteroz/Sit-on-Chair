@@ -209,6 +209,7 @@ nav > ul > li a:hover {
 	float: left;
 	background-color: white;
 	margin-top: 50px;
+    border: 1px solid #808080;
 }
 .center{
     margin-right: 50px;
