@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//kalkulator- do dopracowania
+//kalkulator
 
     var dropColor = document.querySelectorAll(".list_arrow");
     var pickColor = document.querySelectorAll(".list_panel");
@@ -78,6 +78,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var liElement = document.querySelectorAll(".form li");
     var sum = document.querySelector(".sum strong");
+    var results = 0;
+    var panelRight = document.querySelector(".panel_right").children;
+
+
+
+function summary(){
+    for (var i = 0; i < panelRight.length; i++) {
+        results = Number(panelRight[i].innerText) + results
+        sum.innerText = results;
+        console.log(results);
+    }
+    results = 0;
+}
 
 
 
@@ -96,10 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 typeChair[0].innerText = text;
                 var price = this.dataset.price;
                 priceColumn[0].innerText = Number(price);
-                result = Number(priceColumn[0].innerText);
-                sum.innerText = result;
                 choose.classList.toggle("display");
-                result = 0;
+                summary();
             });
         }
 
@@ -110,19 +121,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var choose = this.nextElementSibling;
         choose.classList.toggle("display");
         var pickElement = choose.children;
-        console.log(pickElement);
 
         for (var i = 0; i < pickElement.length; i++) {
-
             pickElement[i].addEventListener("click", function (event){
-
                 var text = this.innerText;
                 typeChair[1].innerText = text;
                 var price = this.dataset.price;
                 priceColumn[1].innerText = Number(price);
-                result = Number(priceColumn[1].innerText);
-                sum.innerText = result + Number(sum.innerText);
                 choose.classList.toggle("display");
+                summary();
             });
         }
     });
@@ -132,19 +139,16 @@ document.addEventListener("DOMContentLoaded", function () {
         var choose = this.nextElementSibling;
         choose.classList.toggle("display");
         var pickElement = choose.children;
-        console.log(pickElement);
 
         for (var i = 0; i < pickElement.length; i++) {
-
             pickElement[i].addEventListener("click", function (event){
 
                 var text = this.innerText;
                 typeChair[2].innerText = text;
                 var price = this.dataset.price;
                 priceColumn[2].innerText = Number(price);
-                result = Number(priceColumn[2].innerText);
-                sum.innerText = result + Number(sum.innerText);
                 choose.classList.toggle("display");
+                summary();
             });
         }
 
@@ -152,39 +156,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     checkBox.addEventListener("click", function (event){
-        console.log(this);
+        event.preventDefault();
         if (this.previousElementSibling.checked == true) {
             priceColumn[3].innerText = "";
-            typeChair[3].innerText = "";
+            typeChair[3].innerText =  "";
             result = Number(this.previousElementSibling.dataset.price);
             sum.innerText = Number(sum.innerText) - result;
+            result = 0;
         }else {
-            result = Number(this.previousElementSibling.dataset.price);
-            priceColumn[3].innerText = result;
-            console.log(priceColumn[3]);
-            sum.innerText = result + Number(sum.innerText);
             typeChair[3].innerText = "Transport";
+            priceColumn[3].innerText =             Number(this.previousElementSibling.dataset.price);
+            console.log(priceColumn[3]);
+            summary();
         }
     });
 
-console.log(priceColumn[0].innerText);
-
-/*
-var result = 0;
-for (var j = 0; i < priceColumn.length; i++) {
-    result += Number(priceColumn[j].innerText)
-    console.log(result);
-}
-}
-
-var result = 0;
-for (var i = 0; i < liElement.length; i++) {
-    liElement[i].addEventListener("click", function (event){
-for (var j = 0; j < priceColumn.length; j++) {
-    result += Number(priceColumn[j].innerText);
-}
-sum.innerText = Number(result);
-    });
-}
-*/
 });
