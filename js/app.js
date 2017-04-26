@@ -149,4 +149,13 @@ document.addEventListener("DOMContentLoaded", function () {
             summary();
         }
     });
+
+
+    var submitForm = document.getElementById("submit_form");
+    console.log(submitForm);
+    submitForm.addEventListener("click", function (event){
+        event.preventDefault();
+        console.log(this);
+    });
+
 });

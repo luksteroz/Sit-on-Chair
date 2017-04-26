@@ -32,7 +32,7 @@ body > header, section, footer {
     color: #24ba9f;
 	font-weight: bold;
 }
-.cursor{
+#submit_form{
     cursor: pointer;
 }
 a {
