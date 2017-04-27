@@ -218,7 +218,8 @@
                     <div class="sum_label">SUMA</div>
                     <div class="sum"><strong></strong></div>
                 </div>
-                <a href="" class="green_button">Zamawiam</a>
+                <input type="submit" id="newOrder" class="green_button"  value="ZAMAWIAM">
+                <p></p>
             </section>
         </div>
     </section>
@@ -229,10 +230,10 @@
                 <form>
                     <div class="leftForm floatLeft">
                         <p>
-                            <input type="text" name="user_name" maxlength="25" placeholder="Imię i nazwisko">
+                            <input id="inputName" type="text" name="user_name" maxlength="30" placeholder="Imię i nazwisko">
                         </p>
                         <p>
-                            <input type="text" name="email" maxlength="30" placeholder="email" >
+                            <input id="inputEmail" type="text" name="email" maxlength="35" placeholder="email" >
                         </p>
                         <p>
                             <textarea name="message" placeholder="Wiadomość"></textarea>
@@ -242,13 +243,14 @@
                         <img src="images/red_chair.png">
                         <p class="clearfix">
                             <label class="newCheck">
-                                <input class="floatLeft"type="checkbox" value="remember" name="agree">
+                                <input id="checkboxAgree" class="floatLeft" type="checkbox" value="remember">
                                 <span class="floatLeft cursor">Zgadzam się na przetwarzanie <br>danych osobowych</span>
                             </label>
                         </p>
                         <p>
                             <input id="submit_form" type="submit" name="wyslij" value="Wyślij">
                         </p>
+                        <p id="errors"></p>
                     </div>
                 </form>
     </section>

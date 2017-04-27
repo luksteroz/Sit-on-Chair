@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var checkBox = document.querySelector(".check-box label");
     var liElement = document.querySelectorAll(".form li");
     var sum = document.querySelector(".sum strong");
+    var order = document.getElementById("newOrder");
     var results = 0;
 
     function summary(){
@@ -80,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         results = 0;
     }
+    order.addEventListener("click", function(event){
+        event.preventDefault();
+        this.nextElementSibling.innerText = "Zamówienie przyjęte do realizacji";
+    });
 
     dropColor[0].addEventListener("click", function (event) {
         event.preventDefault();
@@ -150,12 +155,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+//podstawowa walidacja formularza
 
-    var submitForm = document.getElementById("submit_form");
-    console.log(submitForm);
-    submitForm.addEventListener("click", function (event){
-        event.preventDefault();
-        console.log(this);
-    });
+        var submitForm = document.querySelector("form");
+        var checkBox = document.getElementById("checkboxAgree");
+        var name = document.getElementById("inputName")
+        var email = document.getElementById("inputEmail")
+        var error = document.getElementById("errors")
+        var errorTab = [];
 
+        submitForm.addEventListener("submit", function (event){
+
+            event.preventDefault();
+            console.log(email,name, checkBox);
+            if (checkBox.checked == false) {
+                errorTab.push("Zaznacz dobrowolne przetwarzanie danych osobowych")
+            }if (email.value.indexOf("@") === -1) {
+                errorTab.push("Poprawny adres e-mail musi zawierać znak @")
+            }if (name.value.length < 8) {
+                errorTab.push("Podane imię i nazwisko jest za krótkie")
+            }if (errorTab.length > 0) {
+                var errors = "";
+                for (var i = 0; i < errorTab.length; i++) {
+                    errors = " " + (errorTab.length-i) + ". " + errorTab[i] +  errors;
+                    error.innerText = errors;
+                    error.style.color = "red";
+                }
+            }if (errorTab.length === 0){
+                error.innerText = "Formularz wysłany prawidłowo. Dziękujemy";
+                error.style.color = "green";
+            }
+            errorTab = [];
+        });
 });
